@@ -47,12 +47,14 @@ namespace Unit05.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleGrow(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Snake snake2 = (Snake)cast.GetFirstActor("snake2");
-            Score score = (Score)cast.GetFirstActor("score");
-            Food food = (Food)cast.GetFirstActor("food");
-            snake.GrowTail(1);
-            snake2.GrowTail(1);
+            if(isGameOver == false){
+                Snake snake = (Snake)cast.GetFirstActor("snake");
+                Snake snake2 = (Snake)cast.GetFirstActor("snake2");
+                Score score = (Score)cast.GetFirstActor("score");
+                Food food = (Food)cast.GetFirstActor("food");
+                snake.GrowTail(1);
+                snake2.GrowTail(1);
+            }
         }
         /// <summary>
         /// Sets the game over flag if the snake collides with one of its segments.
